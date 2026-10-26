@@ -25,12 +25,14 @@ let package = Package(
       name: "ConcurrencyExtras"
     ),
     .target(
-      name: "ConcurrencyExtrasTestSupport"
+      name: "ConcurrencyExtrasTestSupport",
+      dependencies: ["ConcurrencyExtras"]
     ),
     .testTarget(
       name: "ConcurrencyExtrasTests",
       dependencies: [
-        "ConcurrencyExtras"
+        "ConcurrencyExtras",
+        "ConcurrencyExtrasTestSupport"
       ]
     ),
   ],

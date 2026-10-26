@@ -1,3 +1,5 @@
+public import ConcurrencyExtras
+
 #if !os(WASI) && !os(Windows) && !os(Android)
   import Foundation
 

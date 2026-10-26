@@ -1,3 +1,17 @@
+> **Lake of Fire production fork** — based on upstream 1.4.1. The production
+> `ConcurrencyExtras` product retains its locks, sendable wrappers, streams and
+> task utilities. Global-executor interception lives exclusively in the existing
+> `ConcurrencyExtrasTestSupport` product, which depends on the production module.
+> Tests needing `withMainSerialExecutor` or `uncheckedUseMainSerialExecutor` must
+> explicitly import and link `ConcurrencyExtrasTestSupport`. Applications must
+> link only `ConcurrencyExtras`.
+>
+> To merge upstream, retain the manifest edge and the moved
+> `Sources/ConcurrencyExtrasTestSupport/MainSerialExecutor.swift` file; review
+> upstream changes to its former path. No implementation rewrite or runtime hook
+> stub is used. Validate both production and test-support products and inspect
+> the consuming app's Release binaries before updating an exact revision pin.
+
 # Concurrency Extras
 
 [![](https://img.shields.io/badge/documentation-gray?logo=swift&logoColor=white)](https://swiftpackageindex.com/pointfreeco/swift-concurrency-extras/main/documentation/concurrencyextras)

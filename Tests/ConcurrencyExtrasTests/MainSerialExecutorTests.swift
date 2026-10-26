@@ -1,3 +1,4 @@
+import ConcurrencyExtrasTestSupport
 #if !os(WASI) && !os(Windows) && !os(Android)
   import ConcurrencyExtras
   import XCTest
